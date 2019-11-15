@@ -19,6 +19,8 @@
         .input-box
           = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
           = f.label :image, class: 'form__mask__image' do
-            %i= icon('fas', 'image')
+            -# %i= icon('fas', 'image')
+            %span.image
+            = image_tag src="https://cdn1.iconfinder.com/data/icons/social-17/48/photos2-512.png", size: "25x25"
             = f.file_field :image, class: 'box__image--select'
         = f.submit 'Send', class: 'form__submit'
