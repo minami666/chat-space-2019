@@ -5,12 +5,10 @@
     %ul.header__lists
       %li.header__lists__list--1
         = link_to new_group_path do
-          -# %i= icon('fas', 'edit')
           %span.image
             = image_tag src="https://www.iconscreator.com/gd/makefg.php?i=icons/People/User-Group.png&r=255&g=255&b=255", size: "20x20",color: "white"
       %li.header__lists__list--2
         = link_to edit_user_path(current_user) do
-          -# %i= icon('fas', 'cogs')
           %span.image
             = image_tag src="https://www.iconsdb.com/icons/preview/white/settings-25-xxl.png", size: "20x20",color: "white"
   .groups

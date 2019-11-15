@@ -157,6 +157,7 @@ html{
           align-items: center;
 
             .input-box{
+              height: 50px;
               position: relative;
               width: 100%;
               display: flex;
@@ -166,6 +167,9 @@ html{
                 width: 100%;
                 color: #434A54;
                 border-style: none;
+              }
+              &__mask__image{
+                height: 50px;
               }
               label{
                   font-size: 1.3rem;
