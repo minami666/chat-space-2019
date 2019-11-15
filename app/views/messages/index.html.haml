@@ -1,0 +1,24 @@
+.wrapper
+  = render "shared/side_bar"
+  #chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group
+          = @group.name
+        %ul.main-header__left-box__member-list
+          %li.main-header__left-box__member-list__member
+            - @members.each do |member|
+              = member.name
+      =link_to 'Edit',edit_group_path(params[:group_id]), class: "main-header__edit-button", method: :get
+
+    .messages
+      = render partial: 'message', collection: @messages
+
+    .form
+      = form_for [@group, @message] do |f|
+        .input-box
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'form__mask__image' do
+            %i= icon('fas', 'image')
+            = f.file_field :image, class: 'box__image--select'
+        = f.submit 'Send', class: 'form__submit'

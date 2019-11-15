@@ -1,0 +1,1255 @@
+  [1m[35m (0.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `chat-space2_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `chat-space2_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE `group_users` (`id` int AUTO_INCREMENT PRIMARY KEY, `group_id` int, `user_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_group_users_on_group_id` USING btree (`group_id`),  INDEX `index_group_users_on_user_id` USING btree (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE `groups` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_groups_on_name` USING btree (`name`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_users_on_email` USING btree (`email`),  INDEX `index_users_on_name` USING btree (`name`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (18.2ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_a9d5f48449`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+[0m
+  [1m[35m (17.6ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_1486913327`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20191107055929)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20191107055852),
+(20191107051329);
+
+[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2019-11-08 09:46:59', '2019-11-08 09:46:59')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (10.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `chat-space2_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `chat-space2_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE `group_users` (`id` int AUTO_INCREMENT PRIMARY KEY, `group_id` int, `user_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_group_users_on_group_id` USING btree (`group_id`),  INDEX `index_group_users_on_user_id` USING btree (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `groups` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_groups_on_name` USING btree (`name`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_users_on_email` USING btree (`email`),  INDEX `index_users_on_name` USING btree (`name`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (17.2ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_a9d5f48449`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+[0m
+  [1m[35m (16.2ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_1486913327`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20191107055929)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20191107055852),
+(20191107051329);
+
+[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2019-11-08 10:28:41', '2019-11-08 10:28:41')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (8.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `chat-space2_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `chat-space2_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE `group_users` (`id` int AUTO_INCREMENT PRIMARY KEY, `group_id` int, `user_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_group_users_on_group_id` USING btree (`group_id`),  INDEX `index_group_users_on_user_id` USING btree (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE `groups` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_groups_on_name` USING btree (`name`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_users_on_email` USING btree (`email`),  INDEX `index_users_on_name` USING btree (`name`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (16.7ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_a9d5f48449`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+[0m
+  [1m[35m (17.2ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_1486913327`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20191107055929)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20191107055852),
+(20191107051329);
+
+[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2019-11-08 10:29:04', '2019-11-08 10:29:04')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (9.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `chat-space2_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `chat-space2_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE `group_users` (`id` int AUTO_INCREMENT PRIMARY KEY, `group_id` int, `user_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_group_users_on_group_id` USING btree (`group_id`),  INDEX `index_group_users_on_user_id` USING btree (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE `groups` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_groups_on_name` USING btree (`name`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_users_on_email` USING btree (`email`),  INDEX `index_users_on_name` USING btree (`name`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (17.8ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_a9d5f48449`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+[0m
+  [1m[35m (15.9ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_1486913327`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20191107055929)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20191107055852),
+(20191107051329);
+
+[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2019-11-08 10:29:22', '2019-11-08 10:29:22')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (7.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `chat-space2_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `chat-space2_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE `group_users` (`id` int AUTO_INCREMENT PRIMARY KEY, `group_id` int, `user_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_group_users_on_group_id` USING btree (`group_id`),  INDEX `index_group_users_on_user_id` USING btree (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE `groups` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_groups_on_name` USING btree (`name`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE `messages` (`id` int AUTO_INCREMENT PRIMARY KEY, `image` varchar(255), `body` text NOT NULL, `group_id` int NOT NULL, `user_id` int NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_messages_on_group_id` USING btree (`group_id`),  INDEX `index_messages_on_user_id` USING btree (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_users_on_email` USING btree (`email`),  INDEX `index_users_on_name` USING btree (`name`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (17.9ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_a9d5f48449`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+[0m
+  [1m[35m (16.1ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_1486913327`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (17.9ms)[0m  [1m[35mALTER TABLE `messages` ADD CONSTRAINT `fk_rails_841b0ae6ac`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+[0m
+  [1m[35m (18.3ms)[0m  [1m[35mALTER TABLE `messages` ADD CONSTRAINT `fk_rails_273a25a7a6`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20191108102500)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20191107055929),
+(20191107055852),
+(20191107051329);
+
+[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2019-11-08 10:31:43', '2019-11-08 10:31:43')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (10.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `chat-space2_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `chat-space2_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE `group_users` (`id` int AUTO_INCREMENT PRIMARY KEY, `group_id` int, `user_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_group_users_on_group_id` USING btree (`group_id`),  INDEX `index_group_users_on_user_id` USING btree (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE `groups` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_groups_on_name` USING btree (`name`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE `messages` (`id` int AUTO_INCREMENT PRIMARY KEY, `content` varchar(255), `image` varchar(255), `group_id` int, `user_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_messages_on_group_id` USING btree (`group_id`),  INDEX `index_messages_on_user_id` USING btree (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_users_on_email` USING btree (`email`),  INDEX `index_users_on_name` USING btree (`name`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (18.9ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_a9d5f48449`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+[0m
+  [1m[35m (18.0ms)[0m  [1m[35mALTER TABLE `group_users` ADD CONSTRAINT `fk_rails_1486913327`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (18.2ms)[0m  [1m[35mALTER TABLE `messages` ADD CONSTRAINT `fk_rails_841b0ae6ac`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+[0m
+  [1m[35m (12.9ms)[0m  [1m[35mALTER TABLE `messages` ADD CONSTRAINT `fk_rails_273a25a7a6`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20191107111343)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20191107055929),
+(20191107055852),
+(20191107051329);
+
+[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2019-11-08 13:20:20', '2019-11-08 13:20:20')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rolande@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('小山', 'rolande@hotmail.com', '$2a$04$qOdzpiHkwh2WdH86qHOPU.z.i2O87jNjpUAF3wJXj1UHKleiT/zfG', '2019-11-11 07:34:40', '2019-11-11 07:34:40')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zetta@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('中川', 'zetta@gmail.com', '$2a$04$tuGKPNYgLBXNy2o9YCZR8.VchnRvp4sORJozA3MD1zosDrKkPJCk.', '2019-11-11 07:34:40', '2019-11-11 07:34:40')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'randee_smitham@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('藤原', 'randee_smitham@hotmail.com', '$2a$04$0hxDeD3x4pmj7tp0brDR6e2l51bXHgFwT11xzrIGc6pa6kCJD3kmy', '2019-11-11 07:34:40', '2019-11-11 07:34:40')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '鹿児島県 black cats' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('鹿児島県 black cats', '2019-11-11 07:34:40', '2019-11-11 07:34:40')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'kaila.simonis@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('藤本', 'kaila.simonis@yahoo.com', '$2a$04$yxJePPRVjmQzAKP3nayiDO1iXs37qZniuKYfsmtwknGM4Jw.Yop7.', '2019-11-11 07:45:33', '2019-11-11 07:45:33')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '群馬県 penguins' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('群馬県 penguins', '2019-11-11 07:45:33', '2019-11-11 07:45:33')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 44ms (Views: 8.5ms | ActiveRecord: 5.1ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'sierra@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('石井', 'sierra@gmail.com', '$2a$04$qiWlrD5LTdd5f7f7129DEeR6zUf2CBNc4B3yNRnhdtLsdeNFMQ1ZC', '2019-11-11 07:45:34', '2019-11-11 07:45:34')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '神奈川県 kangaroos' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('神奈川県 kangaroos', '2019-11-11 07:45:34', '2019-11-11 07:45:34')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 3 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (4.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'lowell_turner@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('金子', 'lowell_turner@hotmail.com', '$2a$04$yqts4DFiSFnDv4.amVIjceitg.7qbaI7//BOvvvivicHkw7XMUoAq', '2019-11-11 07:45:34', '2019-11-11 07:45:34')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '長崎県 goats' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('長崎県 goats', '2019-11-11 07:45:34', '2019-11-11 07:45:34')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 6 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 4 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '熊本県 chickens' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('熊本県 chickens', '2019-11-11 07:45:34', '2019-11-11 07:45:34')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"5"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (4.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'merri@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('野村', 'merri@hotmail.com', '$2a$04$MlJHYRvfV33qPF5LMuMlFOpPnZ1DfO5pQ96O0y0jL4.2cMlLXzpkS', '2019-11-11 07:51:55', '2019-11-11 07:51:55')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '山形県 foxes' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('山形県 foxes', '2019-11-11 07:51:55', '2019-11-11 07:51:55')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 7 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 6 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 40ms (Views: 7.0ms | ActiveRecord: 3.9ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'lyndon_turner@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('清水', 'lyndon_turner@yahoo.com', '$2a$04$WLPF8X4DEq6Y0hOKCbCaS./nkurhNNy4kzqhStJU4KzyUB8r0F4nG', '2019-11-11 07:51:55', '2019-11-11 07:51:55')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '神奈川県 griffins' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('神奈川県 griffins', '2019-11-11 07:51:55', '2019-11-11 07:51:55')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 8 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'nena@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('岡田', 'nena@gmail.com', '$2a$04$YQQJgEtEuQMMhkwe4fDgEuTK0m0qCYEGJxuIM1HJ6/5Rxyc0kGBRW', '2019-11-11 07:51:55', '2019-11-11 07:51:55')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '岩手県 elephants' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('岩手県 elephants', '2019-11-11 07:51:55', '2019-11-11 07:51:55')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 9 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 8 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '山形県 zombies' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('山形県 zombies', '2019-11-11 07:51:55', '2019-11-11 07:51:55')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"9"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'danuta_lakin@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('斉藤', 'danuta_lakin@gmail.com', '$2a$04$NLr1LGopa3vB5RwWnaf3A.TT55/iufGZp.wa5pgiSYYA40XFL1Lae', '2019-11-11 07:52:05', '2019-11-11 07:52:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '岐阜県 oxen' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('岐阜県 oxen', '2019-11-11 07:52:05', '2019-11-11 07:52:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 10 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 10 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 40ms (Views: 7.1ms | ActiveRecord: 3.3ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'damian.orn@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('木下', 'damian.orn@hotmail.com', '$2a$04$y8C5pw2X2hfVagl5Bi0FGOdgUV2RMPFsoLBSIQOt/sC7wfPTCKBoy', '2019-11-11 07:52:05', '2019-11-11 07:52:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '青森県 prophets' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('青森県 prophets', '2019-11-11 07:52:05', '2019-11-11 07:52:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 11 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 11 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'edmund@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('山口', 'edmund@hotmail.com', '$2a$04$gtwyhZw1cfUkO/Il5hLCG.Ot16YPhT3t0z828c08OswXDj04rIUNG', '2019-11-11 07:52:05', '2019-11-11 07:52:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '神奈川県 conspirators' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('神奈川県 conspirators', '2019-11-11 07:52:05', '2019-11-11 07:52:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 12 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 12 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '鳥取県 vampires' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('鳥取県 vampires', '2019-11-11 07:52:05', '2019-11-11 07:52:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"13"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'danny.rogahn@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('増田', 'danny.rogahn@gmail.com', '$2a$04$YRfoJdP9MPsEqSElyfE7Y.f/tiFrau5jh/ebaKKB1ThONAtOnNf06', '2019-11-11 07:54:17', '2019-11-11 07:54:17')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '長崎県 oracles' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('長崎県 oracles', '2019-11-11 07:54:17', '2019-11-11 07:54:17')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 13 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 14 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 37ms (Views: 7.1ms | ActiveRecord: 2.9ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mariko_pfeffer@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('加藤', 'mariko_pfeffer@gmail.com', '$2a$04$Rv7B6ZwXPrcSbX6aa1jvrePHL3f/FvlsCv7rOC/S2PNgYpvRmT9OK', '2019-11-11 07:54:17', '2019-11-11 07:54:17')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '長崎県 whales' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('長崎県 whales', '2019-11-11 07:54:17', '2019-11-11 07:54:17')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"15"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 14 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 15 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'reyes.cruickshank@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('安藤', 'reyes.cruickshank@hotmail.com', '$2a$04$SmM5wV/n.iA4Wm/oyKL4xeyLlTQp0n/5Pdi9ZKgpNBmuR2Sj1Zmha', '2019-11-11 07:54:17', '2019-11-11 07:54:17')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '石川県 black cats' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('石川県 black cats', '2019-11-11 07:54:17', '2019-11-11 07:54:17')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"16"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 15 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 16 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '兵庫県 penguins' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('兵庫県 penguins', '2019-11-11 07:54:17', '2019-11-11 07:54:17')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"17"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'clarence_runolfon@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('長谷川', 'clarence_runolfon@hotmail.com', '$2a$04$grKJ7pVV7E5e6I0qfT1sque4wNsjHhTf6NKHrYuesxjDoukkfu98u', '2019-11-11 07:57:04', '2019-11-11 07:57:04')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '島根県 birds' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('島根県 birds', '2019-11-11 07:57:04', '2019-11-11 07:57:04')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 16 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 18 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 38ms (Views: 7.1ms | ActiveRecord: 3.0ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'aileen_lockman@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('渡部', 'aileen_lockman@hotmail.com', '$2a$04$536ynANhXATWeznz5LnD6uGkapf9XFZVsHRKCFX8klMRvOmF/rWz.', '2019-11-11 07:57:05', '2019-11-11 07:57:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '滋賀県 frogs' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('滋賀県 frogs', '2019-11-11 07:57:05', '2019-11-11 07:57:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"19"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 17 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 19 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'irvin_gulgowski@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('和田', 'irvin_gulgowski@yahoo.com', '$2a$04$TSLdFfObmAMXW24PilQN8uE1zUx0BajG6a34BCnQlcU/TLkuMj5dG', '2019-11-11 07:57:05', '2019-11-11 07:57:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '山形県 cattle' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('山形県 cattle', '2019-11-11 07:57:05', '2019-11-11 07:57:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"20"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 18 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 20 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '群馬県 frogs' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('群馬県 frogs', '2019-11-11 07:57:05', '2019-11-11 07:57:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"21"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'darrel_durgan@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('高木', 'darrel_durgan@hotmail.com', '$2a$04$6SHBusYRHBI/P4.W6RbetejhfmhFfFnr1ncaT4pBObRFHEiShfpQC', '2019-11-11 07:57:21', '2019-11-11 07:57:21')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '岩手県 kangaroos' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('岩手県 kangaroos', '2019-11-11 07:57:21', '2019-11-11 07:57:21')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 19 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 22 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 38ms (Views: 7.2ms | ActiveRecord: 3.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'shanika.langworth@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('鈴木', 'shanika.langworth@hotmail.com', '$2a$04$TrYQnJK9vlbfT8Les1hNqO9RNfClpCkMHDPnxm4fh4Vpdw.VlAaoW', '2019-11-11 07:57:21', '2019-11-11 07:57:21')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '群馬県 spiders' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('群馬県 spiders', '2019-11-11 07:57:21', '2019-11-11 07:57:21')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"23"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 20 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 23 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'horacio@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('後藤', 'horacio@yahoo.com', '$2a$04$N9LT06MfIEJAxOBQrzc7TupDeV1CkKPfRkzRk9egFqF2y14F3AQmm', '2019-11-11 07:57:21', '2019-11-11 07:57:21')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '福井県 buffalo' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('福井県 buffalo', '2019-11-11 07:57:21', '2019-11-11 07:57:21')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"24"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 21 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 24 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '佐賀県 witches' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('佐賀県 witches', '2019-11-11 07:57:21', '2019-11-11 07:57:21')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"25"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jefferson@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('鈴木', 'jefferson@gmail.com', '$2a$04$zw8GYQGRxfuMD8rJ9M5bAuYcttbjd8B5eARWCflXIRaJvkHmPl8Ei', '2019-11-11 07:57:50', '2019-11-11 07:57:50')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '高知県 oxen' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('高知県 oxen', '2019-11-11 07:57:50', '2019-11-11 07:57:50')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"26"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 22 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 26 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 41ms (Views: 7.1ms | ActiveRecord: 3.5ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dong@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('田中', 'dong@gmail.com', '$2a$04$tkhzZkh09h0XF2qd9nzpp.78bikBg4EjZAC/BMMmAcTqu80eASFZ2', '2019-11-11 07:57:50', '2019-11-11 07:57:50')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '広島県 black cats' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('広島県 black cats', '2019-11-11 07:57:50', '2019-11-11 07:57:50')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 23 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'naomi.torphy@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('佐野', 'naomi.torphy@yahoo.com', '$2a$04$ybf7soOLyKcVkJNj18jH1uZALtxrANNWObLAtOk8d4S9CrP5PWMbq', '2019-11-11 07:57:50', '2019-11-11 07:57:50')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '神奈川県 geese' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('神奈川県 geese', '2019-11-11 07:57:50', '2019-11-11 07:57:50')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"28"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 24 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 28 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '栃木県 monkeys' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('栃木県 monkeys', '2019-11-11 07:57:50', '2019-11-11 07:57:50')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"29"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'cliff@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('長谷川', 'cliff@hotmail.com', '$2a$04$gWG27p.5MVR/SJTws5kHBONVSM1ako2pEvwH067lTI734um0cxRee', '2019-11-11 07:58:53', '2019-11-11 07:58:53')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '岩手県 fishes' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('岩手県 fishes', '2019-11-11 07:58:53', '2019-11-11 07:58:53')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"30"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 25 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 30 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 42ms (Views: 10.4ms | ActiveRecord: 3.2ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tyron_rolfson@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('田村', 'tyron_rolfson@yahoo.com', '$2a$04$vr8NxuN06gobaV57M6GxfOLwzGCfoWWoAfia8MeO3CXBie5OYMhmO', '2019-11-11 07:58:53', '2019-11-11 07:58:53')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '京都府 pigs' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('京都府 pigs', '2019-11-11 07:58:53', '2019-11-11 07:58:53')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"31"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 26 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 31 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'brandi_pfannerstill@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('山崎', 'brandi_pfannerstill@gmail.com', '$2a$04$bltrIrGvZIWvEQWraw9V4OOjahpb9QN47mlTOmrMn7164L04Tl8wO', '2019-11-11 07:58:53', '2019-11-11 07:58:53')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '山梨県 ants' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('山梨県 ants', '2019-11-11 07:58:53', '2019-11-11 07:58:53')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"32"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 27 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 32 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '長野県 spiders' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('長野県 spiders', '2019-11-11 07:58:53', '2019-11-11 07:58:53')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"33"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jazmin.ko@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('岡本', 'jazmin.ko@yahoo.com', '$2a$04$htyzs4x8NFyNA2sdmBWneOUJN6BjfxoH9CocLb534o6tXRWVLPYoC', '2019-11-11 07:59:30', '2019-11-11 07:59:30')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '高知県 cats' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('高知県 cats', '2019-11-11 07:59:30', '2019-11-11 07:59:30')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 28 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 34 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 41ms (Views: 7.4ms | ActiveRecord: 3.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'celestina@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('石井', 'celestina@gmail.com', '$2a$04$dJUECWYUrSjpMYNHIi0XDOyU2CLA9JKTkzbTt7Wn098IUdtKaLo3C', '2019-11-11 07:59:30', '2019-11-11 07:59:30')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '鹿児島県 ghosts' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('鹿児島県 ghosts', '2019-11-11 07:59:30', '2019-11-11 07:59:30')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"35"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 29 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 35 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'genevieve.dubuque@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('林', 'genevieve.dubuque@gmail.com', '$2a$04$57MXmzsNkaYKkgN3axS.G.rwkdMNoj0T.D810nyEPYSRmQPY/tX/m', '2019-11-11 07:59:30', '2019-11-11 07:59:30')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '奈良県 cattle' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('奈良県 cattle', '2019-11-11 07:59:30', '2019-11-11 07:59:30')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"36"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 30 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 36 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '宮城県 enchanters' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('宮城県 enchanters', '2019-11-11 07:59:30', '2019-11-11 07:59:30')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"37"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jerry.sporer@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('井上', 'jerry.sporer@gmail.com', '$2a$04$enW7.XLIONaSYGNezhoIPOGhadS4yrbzGuk7Jh0qG55WEZbPvCnVG', '2019-11-11 08:00:42', '2019-11-11 08:00:42')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '大分県 oxen' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('大分県 oxen', '2019-11-11 08:00:42', '2019-11-11 08:00:42')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"38"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 31 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 38 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 37ms (Views: 7.0ms | ActiveRecord: 3.2ms)
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'bari@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('村田', 'bari@hotmail.com', '$2a$04$gKIrZ..OOE/l56LxMOI1ZOiCz9xKsxbqBrxeiWpNWEDOci6T6lr.i', '2019-11-11 08:00:42', '2019-11-11 08:00:42')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '高知県 vixens' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('高知県 vixens', '2019-11-11 08:00:42', '2019-11-11 08:00:42')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"39"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 32 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 39 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'ronny_cremin@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('吉田', 'ronny_cremin@hotmail.com', '$2a$04$AiQGKipfyY/Ar3qF6GSpPedMDO3cul7xupqgOY0jOPZzK9kFCY1xq', '2019-11-11 08:00:42', '2019-11-11 08:00:42')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '福岡県 buffalo' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('福岡県 buffalo', '2019-11-11 08:00:42', '2019-11-11 08:00:42')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"40"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 33 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 40 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '北海道 wolves' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('北海道 wolves', '2019-11-11 08:00:42', '2019-11-11 08:00:42')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"41"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'carl.aufderhar@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('林', 'carl.aufderhar@yahoo.com', '$2a$04$1frIFyFfQF8faCtTkBUoGes9Pw4f3PMReeHDkT/d20LDsUFJ7aYkq', '2019-11-11 08:01:18', '2019-11-11 08:01:18')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '茨城県 druids' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('茨城県 druids', '2019-11-11 08:01:18', '2019-11-11 08:01:18')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 34 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 42 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 38ms (Views: 7.4ms | ActiveRecord: 3.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'guadalupe.thompson@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('前田', 'guadalupe.thompson@yahoo.com', '$2a$04$gQ5NBtR3DhybvwZoux7GtOwDDYOHum9x2UfWPG5kSRKU1k/c/0b/e', '2019-11-11 08:01:19', '2019-11-11 08:01:19')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '鹿児島県 horses' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('鹿児島県 horses', '2019-11-11 08:01:19', '2019-11-11 08:01:19')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"43"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 35 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 43 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jerome.upton@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('上田', 'jerome.upton@gmail.com', '$2a$04$v/j4XD8yMrotVBJZG/tpL.YMMQo0mWCrAu4vjfxWIWCIkk4jkBhB6', '2019-11-11 08:01:19', '2019-11-11 08:01:19')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '岡山県 cattle' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('岡山県 cattle', '2019-11-11 08:01:19', '2019-11-11 08:01:19')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"44"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 36 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 44 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '福井県 wolves' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('福井県 wolves', '2019-11-11 08:01:19', '2019-11-11 08:01:19')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"45"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rupert_yost@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('山口', 'rupert_yost@yahoo.com', '$2a$04$80l4NTmOxPPdy5TlHEt0t.cgpStA4YZblu/flP/RbmMgLZQXTNkRq', '2019-11-11 08:01:47', '2019-11-11 08:01:47')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '山梨県 zebras' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('山梨県 zebras', '2019-11-11 08:01:47', '2019-11-11 08:01:47')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"46"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 37 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 46 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 38ms (Views: 7.1ms | ActiveRecord: 3.1ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'tula_gusikowski@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('山崎', 'tula_gusikowski@yahoo.com', '$2a$04$GM/Kjr9QKtw.kzxLgARNP.i5xiFSE8/Y6BdyvzT/SREHnh425St46', '2019-11-11 08:01:47', '2019-11-11 08:01:47')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '岩手県 vixens' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('岩手県 vixens', '2019-11-11 08:01:47', '2019-11-11 08:01:47')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"47"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 38 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 47 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'patsy@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('大野', 'patsy@gmail.com', '$2a$04$2bapDTca69cF2gnBv0jfUuXp3TLWYFWi7xRbN9poI6QhrBOXU4ZKu', '2019-11-11 08:01:47', '2019-11-11 08:01:47')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '福井県 druids' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('福井県 druids', '2019-11-11 08:01:47', '2019-11-11 08:01:47')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"48"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 39 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 48 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '山梨県 vixens' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('山梨県 vixens', '2019-11-11 08:01:47', '2019-11-11 08:01:47')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"49"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'francene@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('安藤', 'francene@hotmail.com', '$2a$04$lbupH6HktvwbEa2I5Y3hEub.myLlaxAU8vk1Eb/QjAE4RGeVwhKdG', '2019-11-11 08:02:44', '2019-11-11 08:02:44')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '福岡県 ducks' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('福岡県 ducks', '2019-11-11 08:02:44', '2019-11-11 08:02:44')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"50"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 40 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 50 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 41ms (Views: 7.1ms | ActiveRecord: 3.3ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'devon.crist@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('青木', 'devon.crist@gmail.com', '$2a$04$WQ1TZQmIF.mjgiJQDdecw.QVly1G086kcHry7AaBUZ8HWUzBlZdVu', '2019-11-11 08:02:44', '2019-11-11 08:02:44')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '愛媛県 lions' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('愛媛県 lions', '2019-11-11 08:02:44', '2019-11-11 08:02:44')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"51"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 41 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 51 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rhonda@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('千葉', 'rhonda@yahoo.com', '$2a$04$GzucNYYK1rPuCjfirHLE5uuM3jFwluYKWeLyD/cRJ9j5Ri1G.U2O2', '2019-11-11 08:02:44', '2019-11-11 08:02:44')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '熊本県 foxes' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('熊本県 foxes', '2019-11-11 08:02:44', '2019-11-11 08:02:44')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"52"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 42 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 52 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered messages/index.html.haml within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGroup Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY '島根県 sorcerors' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('島根県 sorcerors', '2019-11-11 08:02:44', '2019-11-11 08:02:44')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"53"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
