@@ -60,6 +60,9 @@ html {
           overflow: scroll;
           .group {
             margin-bottom: 40px;
+            a{
+              text-decoration: none;
+            }
             &__name {
               color: $white;
               font-size: 15px;
