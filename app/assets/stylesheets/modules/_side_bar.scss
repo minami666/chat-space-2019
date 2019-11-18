@@ -35,29 +35,20 @@ html {
             width: 80px;
             display: flex;
             padding-top: 5px;
-            &__list--1 {
-              margin-left: 0.3rem;
-              text-align: center;
-              float: left;
-              margin-right: 10px;
-              .image {
-                display: inline-block;
-                color: $white;
-                font: normal;
-                font-size: inherit;
-                text-rendering: auto;
-              }
-            }
-            &__list--2 {
-              margin-left: 0.3rem;
-              text-align: center;
-              float: left;
-              .image {
-                display: inline-block;
-                color: $white;
-                font: normal;
-                font-size: inherit;
-                text-rendering: auto;
+            &__list {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              i{
+                color: white;
+                margin-right: 10px;
+                margin-left: 0.3rem;
+                text-align: center;
+                float: left;
+                ::before{
+                  height: 30px;
+                  width: 30px;
+                }
               }
             }
           }
