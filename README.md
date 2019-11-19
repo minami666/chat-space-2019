@@ -48,3 +48,5 @@
 #### Association
 - belongs_to :user
 - belongs_to :group
+
+##### everysteps_is_done
