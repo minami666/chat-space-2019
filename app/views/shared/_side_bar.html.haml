@@ -3,12 +3,12 @@
     %h3.header__name
       = current_user.name
     %ul.header__lists
-      %li.header__lists__list--1
+      %li.header__lists__list
         = link_to new_group_path do
-          %i= icon('fas', 'edit')
-      %li.header__lists__list--2
+          %i.fa.fa-users
+      %li.header__lists__list
         = link_to edit_user_path(current_user) do
-          %i= icon('fas', 'cogs')
+          %i.fa.fa-cog
   .groups
     - current_user.groups.each do |group|
       .group
