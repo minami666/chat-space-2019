@@ -9,7 +9,7 @@
           %li.main-header__left-box__member-list__member
             - @members.each do |member|
               = member.name
-      =link_to 'Edit',edit_group_path(params[:group_id]), class: "main-header__edit-button", method: :get
+      =link_to '編集',edit_group_path(params[:group_id]), class: "main-header__edit-button", method: :get
 
     .messages
       = render partial: 'message', collection: @messages
@@ -17,10 +17,9 @@
     .form
       = form_for [@group, @message] do |f|
         .input-box
-          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          = f.text_field :content, class: 'input-box__text', placeholder: 'メッセージを入力してください'
           = f.label :image, class: 'form__mask__image' do
-            -# %i= icon('fas', 'image')
             %span.image
             = image_tag src="https://cdn1.iconfinder.com/data/icons/social-17/48/photos2-512.png", size: "25x32",class: "img"
             = f.file_field :image, class: 'box__image--select'
-        = f.submit 'Send', class: 'form__submit'
+        = f.submit '投稿', class: 'form__submit'
