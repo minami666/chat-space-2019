@@ -1,4 +1,4 @@
-# chat-space
+# :large_orange_diamond: chat-space :large_orange_diamond:
 > LINEのようなチャット機能を備えたwebアプリです。ユーザーはログイン後、チャットグループを作成・加入・トークやり取りができます。<br>
 
 ## 目次
