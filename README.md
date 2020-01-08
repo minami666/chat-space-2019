@@ -5,7 +5,7 @@
 ① [使用技術](https://github.com/minami666/chat-space3#green_book-%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93)<br>
 ② [ユーザー登録・編集・削除](https://github.com/minami666/chat-space3#green_book-%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%99%BB%E9%8C%B2%E7%B7%A8%E9%9B%86%E5%89%8A%E9%99%A4)<br>
 ③ [グループ作成・編集・削除](https://github.com/minami666/chat-space3#green_book-%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E4%BD%9C%E6%88%90%E7%B7%A8%E9%9B%86%E5%89%8A%E9%99%A4)<br>
-④ [メッセージ投稿](https://github.com/minami666/chat-space3#green_book-%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E6%8A%95%E7%A8%BF)<br><br>
+④ [メッセージ投稿](https://github.com/minami666/chat-space3#green_book-%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E6%8A%95%E7%A8%BF)<br>
 ⑤ [データベース](https://github.com/minami666/chat-space3#green_book-%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9)<br><br>
 
 ## :green_book: ①使用技術
