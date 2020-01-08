@@ -1,5 +1,11 @@
 # chat-space
-> LINEのようなチャット機能を備えたwebアプリです。ユーザーはログイン後、チャットグループを作成・加入できます。トークはajaxで行われます。
+> LINEのようなチャット機能を備えたwebアプリです。ユーザーはログイン後、チャットグループを作成・加入・トークやり取りができます。<br>
+
+## 目次
+① 使用技術<br>
+② ユーザー登録・編集・削除<br>
+③ グループ作成・編集・削除<br>
+④ メッセージ投稿<br><br>
 
 ## 使用技術
 <p align="center">
@@ -17,14 +23,10 @@
 <a><a href="https://aws.amazon.com/"><img src="https://user-images.githubusercontent.com/39142850/71774786-37825e00-2fb8-11ea-8b90-bd652a58f1ad.png" height="60px;" /></a>
 </p><br>
 
-## 目次
-① ユーザー登録・編集・削除<br>
-② グループ作成・編集・削除<br>
-③ メッセージ投稿<br>
+## ①ユーザー登録・編集・削除
+> devise gemを使った機能です。登録後はフラッシュが表示されます。
 
-## ユーザー登録・編集・削除
-
-
+<img src="https://user-images.githubusercontent.com/55865498/68070545-3c0d7900-fdb3-11e9-80ae-3ba78bb192cb.png">
 
 
 ## データベース
