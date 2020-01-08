@@ -1,16 +1,6 @@
 # READ ME
 > LINEのようなチャット機能を備えたwebアプリです。ユーザーはログイン後、チャットグループを作成・加入できます。トークはajaxで行われます。
 
-## 目次
-① ユーザー登録・編集・削除
-② グループ作成・編集・削除
-③ メッセージ投稿
-
-![mercari](https://user-images.githubusercontent.com/39142850/71774503-7feb4d00-2fb3-11ea-8b30-f685466ff97f.png)
-<h1 align="center">Mercari Clone</h1>
-<br>
-<p align="center">
-<a>　</a>
 <a><a href="https://www.ruby-lang.org/ja/"><img src="https://user-images.githubusercontent.com/39142850/71774533-1ddf1780-2fb4-11ea-8560-753bed352838.png" width="70px;" /></a>
 <a>　</a>
 <a><a href="https://rubyonrails.org/"><img src="https://user-images.githubusercontent.com/39142850/71774548-731b2900-2fb4-11ea-99ba-565546c5acb4.png" height="60px;" /></a><br><br>
@@ -31,6 +21,13 @@
 <b><a><a href="https://github.com/sawayu"><img src="https://avatars2.githubusercontent.com/u/57563734?s=460&v=4" width="100px;" /></a></b><a>　</a>
 <b><a><a href="https://github.com/jku0704"><img src="https://avatars0.githubusercontent.com/u/56948201?s=460&v=4" width="100px;" /></a></b>
 <br><br><br><br>
+
+
+
+## 目次
+① ユーザー登録・編集・削除<br>
+② グループ作成・編集・削除<br>
+③ メッセージ投稿<br>
 
 ## ユーザー登録・編集・削除
 
