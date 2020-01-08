@@ -31,7 +31,7 @@
 
 > 登録後はフラッシュが表示されます
 
-<img src="https://user-images.githubusercontent.com/55865498/71981223-3e81c880-3265-11ea-996e-8c237ae86962.pn">
+<img src="https://user-images.githubusercontent.com/55865498/71981223-3e81c880-3265-11ea-996e-8c237ae86962.png">
 
 > ログイン画面です
 
