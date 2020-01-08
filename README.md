@@ -1,4 +1,4 @@
-# README
+<!-- # README
 
 <img src="https://user-images.githubusercontent.com/55865498/68070545-3c0d7900-fdb3-11e9-80ae-3ba78bb192cb.png">
 
@@ -49,4 +49,4 @@
 - belongs_to :user
 - belongs_to :group
 
-##### everysteps_is_done
+##### everysteps_is_done -->
