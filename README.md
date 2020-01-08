@@ -1,5 +1,7 @@
 # :large_orange_diamond: chat-space :large_orange_diamond:
-> LINEのようなチャット機能を備えたwebアプリです。ユーザーはログイン後、チャットグループを作成・加入・トークやり取りができます。<br><br>
+> LINEのようなチャット機能を備えたwebアプリです。ユーザーはログイン後、チャットグループを作成・加入・トークやり取りができます。<br>
+
+<br>
 
 ## 目次
 ① [使用技術](https://github.com/minami666/chat-space3#green_book-%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93)<br>
