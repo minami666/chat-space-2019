@@ -1,14 +1,8 @@
-※サービスへのリンクは[こちら](http://18.176.49.150)です。
-(ID : admin ／ password : 2222)
-
+<h1 align="center">🔶chat-app🔶</h1>
+<h3 align="center">※サービスへのリンクは<a><a href="http://18.176.49.150/">こちら</a></h3>
 <br>
+> LINEのようなチャット機能を備えたwebアプリです。ユーザーはログイン後、チャットグループを作成・加入・トークやり取りができます。
 <br>
-<br>
-<br>
-
-
-# :large_orange_diamond: chat-space :large_orange_diamond:
-> LINEのようなチャット機能を備えたwebアプリです。ユーザーはログイン後、チャットグループを作成・加入・トークやり取りができます。<br>
 
 <br>
 
