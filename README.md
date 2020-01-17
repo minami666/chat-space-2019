@@ -1,5 +1,13 @@
-# :large_orange_diamond: chat-space :large_orange_diamond:
-> LINEのようなチャット機能を備えたwebアプリです。ユーザーはログイン後、チャットグループを作成・加入・トークやり取りができます。<br>
+<h1 align="center">🔶chat-app🔶</h1>
+<h3 align="center">※サービスへのリンクは<a><a href="http://18.176.49.150/">こちら</a></h3>
+
+<!-- =========================== 見出し ============================== -->
+
+<p align="center">
+<a><a href="http://18.176.49.150/"><img src="https://user-images.githubusercontent.com/55865498/72490432-910d4700-385a-11ea-8547-116b860ed7e6.png" height="600px;" /></a>
+</p><br>
+
+> LINEのようなチャット機能を備えたwebアプリです。ユーザーはログイン後、チャットグループを作成・加入・トークやり取りができます
 
 <br>
 
