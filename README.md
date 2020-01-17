@@ -27,11 +27,11 @@
 </p><br>
 
 ## :green_book: ②ユーザー登録・編集・削除
-> devise gemを使った機能です
+> devise gemを使った機能です。
 
 <img src="https://user-images.githubusercontent.com/55865498/71981141-198d5580-3265-11ea-988c-32a586cc15b4.png">
 
-> 登録後はフラッシュが表示されます
+> 登録後はフラッシュが表示されます。
 
 <img src="https://user-images.githubusercontent.com/55865498/71981223-3e81c880-3265-11ea-996e-8c237ae86962.png">
 
